@@ -3,6 +3,6 @@ data/
 
 # file 
 .env
-.zip
-.tar.gz
-.tar
+*.zip
+*.tar.gz
+*.tar
