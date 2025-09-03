@@ -1,0 +1,21 @@
+{
+  "site_name": "Data Smart Solutions",
+  "site_version": "v1.0.0",
+  "api_base_url": "http://localhost:55000",
+  "menu": [
+    { "label": "Home", "href": "/" },
+    { "label": "Training program", "href": "/dashboard/lms" },
+    { "label": "Appointments", "href": "/dashboard/appointments" }
+  ],
+  "sidebar": [
+    { "label": "Dashboard", "href": "/dashboard", "icon": "home", "roles": ["guest", "student", "developer", "employee", "client", "manager", "admin"] },
+    { "label": "LMS", "href": "/dashboard/lms", "icon": "book", "roles": ["guest", "student", "developer", "employee", "manager", "admin"] },
+    { "label": "Appointments", "href": "/dashboard/appointments", "icon": "calendar", "roles": ["client", "employee", "admin"] },
+    { "label": "Employees", "href": "/dashboard/employees", "icon": "users", "roles": ["admin"] },
+    { "label": "Users", "href": "/dashboard/users", "icon": "shield", "roles": ["admin"] },
+    { "label": "Assignments", "href": "/dashboard/assignments", "icon": "link", "roles": ["employee", "admin"] },
+    { "label": "Surveys", "href": "/dashboard/surveys", "icon": "list", "roles": ["student", "developer", "employee", "admin"] },
+    { "label": "Time", "href": "/dashboard/time", "icon": "clock", "roles": ["employee", "admin"] },
+    { "label": "Payroll", "href": "/dashboard/payroll", "icon": "wallet", "roles": ["employee", "admin"] }
+  ]
+}
