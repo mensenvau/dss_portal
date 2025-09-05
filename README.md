@@ -5,11 +5,15 @@ This is the official website for **Data Smart Solutions**, built with **Next.js*
 ## Install
 
 ```bash
-pm2 start npm --name "dss_web" -- start --port 5000
+pm2 start npm --name "dss_web" -- run start -- --port=5000
 ```
 
 ```bash
 docker-compose up -d
+```
+
+```bash
+docker cp ./mail.conf.php chamilo-learning:/var/www/html/app/config/mail.conf.php
 ```
 
 ## 📝 License

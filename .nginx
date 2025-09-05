@@ -31,6 +31,19 @@ server {
     }
 }
 
+server {
+    listen 80;
+    server_name lms.datasmart-solutions.com;
+    return 301 https://$host$request_uri;
+}
+
+
+server {
+    listen 80;
+    server_name datasmart-solutions.com;
+    return 301 https://$host$request_uri;
+}
+
 
 sudo ln -sf /etc/nginx/sites-available/dss.conf /etc/nginx/sites-enabled/dss.conf
 sudo nginx -t
