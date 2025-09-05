@@ -34,15 +34,9 @@ export default function Navbar() {
 
         {/* Action */}
         <div className="hidden md:flex gap-2">
-          <Link href={process.env.NEXT_PUBLIC_FOR_TALEND as any} target="_blank">
-            <Button className="font-semibold transition-colors rounded-none" variant="outline">
-              Apply as a Talent
-            </Button>
-          </Link>
-
-          <Link href={process.env.NEXT_PUBLIC_FOR_CLIENT as any} target="_blank">
+          <Link href="https://lms.datasmart-solutions.com" target="_blank">
             <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-none transition" variant="default">
-              Hire Top Talent
+              🏫 Campus
             </Button>
           </Link>
         </div>
