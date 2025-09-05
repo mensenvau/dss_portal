@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 
-export function Stats() {
+export default function Stats() {
   const stats = [
     { label: "Projects Completed", value: "60+" },
     { label: "Active Clients", value: "20" },

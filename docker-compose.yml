@@ -1,29 +1,35 @@
-version: '3.1'
-
 services:
-  mysql:
-    image: mysql:8
-    env_file:
-      - ./server/.env
+  db:
+    image: mariadb:10.6
+    container_name: chamilo-db
+    restart: unless-stopped
     environment:
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    ports:
-      - "3306:3306"
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: chamilo
+      MYSQL_USER: chamilo
+      MYSQL_PASSWORD: chamilo
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - ./data/chamilo_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "db"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
 
-  # server:
-  #   build:
-  #     context: ./server
-  #     dockerfile: Dockerfile
-  #   env_file:
-  #     - ./server/.env
-  #   ports:
-  #     - "${APP_PORT:-55000}:55000"
-  #   depends_on:
-  #     - mysql
-  #   volumes:
-  #     - ./server:/usr/src/app
+  learning:
+    build: ./learning
+    container_name: chamilo-learning
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "5001:80"
+    volumes:
+      - ./data/chamilo_data:/var/www/html
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html
+    restart: unless-stopped
+  
+volumes:
+  chamilo_mysql:
+  chamilo_data:

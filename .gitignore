@@ -1,8 +1,7 @@
-# folder 
-data/
-
-# file 
+# file
 .env
-*.zip
-*.tar.gz
-*.tar
+
+# folder
+node_modules/
+data/
+logs/

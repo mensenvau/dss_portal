@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Send, Linkedin, BookOpen } from "lucide-react";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="w-full bg-slate-900 text-white border-t border-gray-200 py-8">
       <div className="mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Josefin_Sans } from "next/font/google";
+import { Inter, Josefin_Sans, Lato, Montserrat, Poppins, Roboto, Rubik, Ubuntu, Ubuntu_Condensed, Ubuntu_Sans, Ubuntu_Sans_Mono } from "next/font/google";
 
 import "@/styles/globals.css";
-import { ConfigProvider } from "@/lib/config-provider";
-import { AuthProvider } from "@/lib/auth-provider";
-import { Toaster } from "@/components/ui/toast";
+
+// const lato = Lato({
+//   variable: "--font-lato",
+//   subsets: ["latin"],
+//   display: "swap",
+//   weight: ["100", "300", "400", "700", "900"],
+// });
 
 const josefin = Josefin_Sans({
   variable: "--font-josefin",
@@ -12,18 +16,15 @@ const josefin = Josefin_Sans({
   subsets: ["latin"],
 });
 
-const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000";
-const SITE_NAME = process.env.NEXT_PUBLIC_NAME || "Data Smart Solutions";
-
 export const metadata: Metadata = {
-  title: SITE_NAME,
+  title: "Data Smart Solutions",
   description: "Empowering businesses with intelligent data analytics and AI-driven insights.",
-  metadataBase: new URL(DOMAIN),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN as any),
   openGraph: {
-    title: SITE_NAME,
+    title: "Data Smart Solutions",
     description: "Unlock the potential of your data with AI and advanced analytics.",
-    url: DOMAIN,
-    siteName: SITE_NAME,
+    url: process.env.NEXT_PUBLIC_DOMAIN as any,
+    siteName: "Data Smart Solutions",
     locale: "en_US",
     type: "website",
   },
@@ -35,14 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={josefin.className}>
-        <ConfigProvider>
-          <AuthProvider>
-            {children}
-            <Toaster />
-          </AuthProvider>
-        </ConfigProvider>
-      </body>
+      <body className={josefin.className}>{children}</body>
     </html>
   );
 }

@@ -45,7 +45,7 @@ const skills = [
   },
 ];
 
-export function Skills() {
+export default function Skills() {
   return (
     <section className="w-full py-10 bg-stone-50 border-t border-gray-200">
       <div className="mx-auto max-w-7xl px-4">
