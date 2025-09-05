@@ -35,8 +35,8 @@ export default function Navbar() {
         {/* Action */}
         <div className="hidden md:flex gap-2">
           <Link href="https://lms.datasmart-solutions.com" target="_blank">
-            <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-none transition" variant="default">
-              🏫 Campus
+            <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2  rounded-none transition" variant="default">
+              Go to Learning Portal
             </Button>
           </Link>
         </div>
